@@ -1,0 +1,265 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+    <title>Me Too</title> 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.1.min.js" ></script>
+    <script type="text/javascript" src="google-spreadsheet.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+/*      body{
+        background-color: #fff4cc;
+        color: #6d6d6d;
+        font-size: .8em;
+        font-family: sans-serif;
+      }
+      h1,a{ color: #5491b2}
+      input{
+        font-size: .8em;
+        background-color: white;
+        color:#606568;
+      }*/
+    </style>
+  </head> 
+  <body > 
+
+    <h1 id="title">me too</h1>
+
+    <h1 id="numberSubs" class="number"> </h1>
+    <p></p>
+    <h1 class="number"> Submissions </h1>
+
+    <div style = "margin-left:9%; margin-top:130px; position:absolute">
+      <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=https://me-2.github.io/metoo/&digit=style/plain/10/&reloads=0" alt="" title="" border="0"></a><br /><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">3d Printer Files</a>
+     <h1 class="number" style="margin-top:17px; margin-left:1%;"> Visits </h1>
+
+    </div>
+    <div id="hiddenDiv" style="display: none;">Thank you for sharing your story, it's definitely not an easy feat. Whether you came looking for closure, peace, or just a safe place, I hope this site helped you find what you were looking for.
+      <p></p>
+      
+      <p style="font-size: 15px;">If you'd like to talk to someone the National Sexual Assault Hotline is available 24 hours a day at 1-800-656-4673</p>
+
+      <p style="font-size: 15px;">For more information about Me Too check out:
+      https://www.glamour.com/story/activist-tarana-burke-started-the-me-too-movement-10-years-ago</p>
+      <p></p>
+        <button id="continue" class="button" ><span>Continue</span></button>
+
+    </div>
+
+
+    <form id="foo">
+        Welcome to Me Too. This is an open site meant to be a safe place for sexual assault and harassment survivors. Everything is completely anonymous, share as much or as little you would like, it was created purely for others to listen. 
+        <p></p>
+        <textarea id="location" name="location" cols="40" placeholder="Optional Location"></textarea>
+        <textarea id="comment" name="comment" cols="40" placeholder="This is your story."></textarea>
+
+        <button id="sendbuttn" class="button" type="submit" value="Send"><span>Send</span></button>
+    </form>
+
+<!--     <pre id='results'></pre>
+ -->
+    <ul id='list'></ul>
+
+    <div id='links'>
+
+    <div id="main"></div>
+
+    </div>
+
+
+
+    <script>
+    jQuery(document).ready(function($) {
+       // Variable to hold request
+        var request;
+
+        // Bind to the submit event of our form
+        $("#foo").submit(function(event){
+
+          if(document.getElementById("location").value == '')
+          {
+            document.getElementById("location").value = 'undefined';
+          }
+
+            // Prevent default posting of form - put here to work in case of errors
+            event.preventDefault();
+
+            // Abort any pending request
+            if (request) {
+                request.abort();
+            }
+            // setup some local variables
+            var $form = $(this);
+
+            // Let's select and cache all the fields
+            var $inputs = $form.find("input, select, button, textarea");
+
+            // Serialize the data in the form
+            var serializedData = $form.serialize();
+
+            // Let's disable the inputs for the duration of the Ajax request.
+            // Note: we disable elements AFTER the form data has been serialized.
+            // Disabled form elements will not be serialized.
+            $inputs.prop("disabled", true);
+
+            // fire off the request to /form.php
+            request = $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbzWZnzC-GKUGIwoZF6NuCxbe1_gYQXhefP6GGEQc7o_cKPZRc4/exec"//"https://script.google.com/macros/s/AKfycbyI4X8Oh8_cxQeIHMBUJOuvcyAOVTrY2mNWaJ_QW43L0DksDSo/exec",
+                type: "post",
+                data: serializedData
+            });
+
+            // Callback handler that will be called on success
+            request.done(function (response, textStatus, jqXHR){
+                // Log a message to the console
+                console.log("Hooray, it worked!");
+            });
+
+            // Callback handler that will be called on failure
+            request.fail(function (jqXHR, textStatus, errorThrown){
+                // Log the error to the console
+                console.error(
+                    "The following error occurred: "+
+                    textStatus, errorThrown
+                );
+            });
+
+            // Callback handler that will be called regardless
+            // if the request failed or succeeded
+            request.always(function () {
+                // Reenable the inputs
+                $inputs.prop("disabled", false);
+            });
+
+        });
+      });
+
+   
+    </script>
+
+
+  <script>
+   document.getElementById("continue").onclick = function() {
+            stateChange();
+    }
+
+      document.getElementById("sendbuttn").onclick = function() {
+         $("#location").placeholder = "";
+          $("#comment").placeholder = "";
+        var hidden = document.getElementById("hiddenDiv");
+        hidden.style.display = "block";
+        // stateChange();
+        
+
+    }
+    document.getElementById("sendbuttn").onclick = function() {
+         $("#location").placeholder = "";
+          $("#comment").placeholder = "";
+        var hidden = document.getElementById("hiddenDiv");
+        hidden.style.display = "block";
+        // stateChange();
+        
+
+    }
+
+    function stateChange() {
+        setTimeout(function () {
+        location.reload();
+
+      }, 300);
+    }
+  // </script>
+  
+
+
+    <script id='script'>
+      localStorage.clear();
+      var sample_url = "https://docs.google.com/spreadsheets/d/1ydtfBCsLe-I84NWTNTWld2TFYmH7pgZ959v2EnAY2Pk/edit?usp=sharing";//"https://spreadsheets.google.com/pub?key=0Ago31JQPZxZrdHF2bWNjcTJFLXJ6UUM5SldEakdEaXc&hl=en&output=html";
+      var url_parameter = document.location.search.split(/\?url=/)[1]
+      var url = url_parameter || sample_url;
+      var googleSpreadsheet = new GoogleSpreadsheet();
+      googleSpreadsheet.url(url);
+      googleSpreadsheet.load(function(result) {
+// 	 console.log(result.get("rows"));
+        // console.log(JSON.stringify(result));
+        var thJ = JSON.parse(JSON.stringify(result));   
+        // console.log(JSON.stringify(thJ.data));
+
+        var data = thJ.data;
+        var times = [];
+        var words = [];
+        var places = [];
+        // console.log(data);
+        iter = 0;
+        for(index=0; index<thJ.data.length; index++){
+          if(iter>1 && index!=2 && index!=0 && index!=1){
+            times.push(data[index]);
+            iter =0;
+
+
+          }
+          else if(iter<=1) {
+            if(iter ==1 && index!=1 && index!=2  && index!=0){
+              places.push(data[index]);
+
+            } else if(iter ==0 && index !=0  && index!=1  && index!=2){
+              words.push(data[index]);
+            }
+            
+            iter++;
+            
+          }
+
+        }
+        console.log(words);
+        console.log(places);
+        console.log(times);
+
+
+        for(comments=0; comments<words.length;comments++){
+            current = (words.length-1)-comments;
+            var div = document.createElement("div");
+            var myheader = document.createElement("HEADER");
+            myheader.innerHTML =  places[current]+ " - " +  times[current];
+            myheader.style.color = "#CA7044";
+            myheader.style.fontSize = "15px";
+            myheader.style.marginBottom= "5px";
+            div.style.width = "100%";
+            div.style.maxWidth = "800px";
+            div.style.minHeight = "15px";
+            div.style.height = (words[current].length* .25).toString()+ "px";
+            div.style.background = "#A6D0B7";
+            div.style.borderRadius = "6px";
+            div.style.color = "#323641";
+            div.style.padding = "15px";
+            div.style.fontSize = "13px";
+
+            myheader.style.marginTop = "30px";  
+
+            div.innerHTML = words[current];
+
+            document.getElementById("main").appendChild(myheader);
+            document.getElementById("main").appendChild(div);
+
+        }
+
+        document.getElementById("numberSubs").innerHTML = words.length.toString();
+
+        // $('#results').html(JSON.stringify(result).replace(/,/g,",\n"));
+        $('#results').html(JSON.stringify(thJ.data));
+      });
+    </script>
+
+    <script>
+      $('#code').html($('#script').html())
+      $('#spreadsheet_url').html("<a href='"+url+"'>"+url+"</a>");
+      $('#iframe').attr("src",url);
+      $('input[name]').val(url);
+      if (url != sample_url){
+        $("div#links").append("<br/><a href='"+document.location.pathname+"'>Original Sample Spreadsheet</a>")
+      }
+    </script>
+
+
+  </body>
+</html>

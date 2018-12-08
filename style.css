@@ -1,0 +1,133 @@
+#title{
+	margin:9%;
+	font-size:30px;
+}
+
+#survivors{
+	float:left;
+	margin-left:5%;
+
+}
+
+#numberSubs{
+	margin-top: -5.5%;
+
+}
+
+.number{
+	float:left;
+	margin-top: -2%;
+	margin-left:9%;
+	font-size: 20px;
+	color:#CA7044;
+}
+
+#main{
+	margin-right:10%;
+	margin-left:45%;
+	/*margin-top:-20%;*/
+}
+
+#hiddenDiv{
+	width: 60%;
+	height:250px;
+	background-color: #EEA86C;
+	margin-right:20%;
+	margin-left:20%;
+	margin-top:-15%;
+	border-radius: 6px;
+	position:absolute;
+	z-index:10000;
+	font-size: 25px;
+	padding:20px;
+
+}
+
+#continue{
+	margin-left:45%;
+	margin-right:45%;
+
+}
+
+#foo{
+	margin-top:-15%;
+	margin-right:10%;
+	margin-left:45%;
+	position:relative;
+	z-index:0;
+
+}
+
+
+#comment{
+	width:80%;
+	height:55px;
+	border-radius: 6px;
+	border:none;	
+	font-size: 13px;
+	padding:8px;
+	position:relative;
+	z-index:10000;
+
+}
+
+#location{
+	width:30%;
+	height:15px;
+	border-radius: 6px;
+	border:none;
+	font-size: 13px;
+	padding:8px;
+	margin-bottom:10px;
+	position:relative;
+
+}
+
+#sendbuttn{
+	margin-left:20px;
+	margin-top:-64px;
+	position:relative;
+
+}
+
+body{
+        background-color: #F7EDC6;
+        color: #6d6d6d;
+        font-size: .8em;
+        font-family: sans-serif;
+        padding:10px;
+}
+
+h1,a{ color: #5491b2}
+input{
+        font-size: .8em;
+        background-color: white;
+        color:#348E98;
+}
+
+
+.button {
+	float:right;
+    background-color: #F7EDC6; /* Green */
+    border: none;
+    color: #F7EDC6;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+	border-radius: 6px;
+    color: #008CBA; 
+    border: 2px solid #008CBA;
+}
+
+
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+}
