@@ -25,6 +25,7 @@
 
     <h1 id="title">Thought Space</h1>
 
+
     <h1 id="numberSubs" class="number"> </h1>
     <p></p>
     <h1 class="number"> Submissions </h1>
@@ -39,7 +40,9 @@
         <button id="continue" class="button" ><span>Continue</span></button>
 
     </div>
+    <p></p>
 
+  
 
     <form id="foo">
         Welcome to Thought Space. This is an open site meant to be a safe place for you to share thoughts and start a conversation. Everything is completely anonymous, share as much or as little you would like, it was created purely to start converstations and question society.
@@ -47,10 +50,33 @@
         Please keep your thoughts to 240 characters (twitter length)
         <p></p>
 
+        <div>
+          <textarea id="name" name="name" cols="40" placeholder="Optional Name"></textarea>
+          <!-- <textarea id="location" name="location" cols="40" placeholder="Optional Location"></textarea> -->
+         
+          <select class="styled-select slate semi-square" id="location" name="location">
+            <option value="0: Center of Room">Center of Room </option>
+            <option value="1: Red Corner">Red Corner</option>
+            <option value="2: Yellow Corner">Yellow Corner</option>
+            <option value="3: Blue Corner">Blue Corner</option>
+            <option value="4: Green Corner">Green Corner</option>
+          </select>
+        
 
-        <textarea id="name" name="name" cols="40" placeholder="Optional Name"></textarea>
-        <textarea id="location" name="location" cols="40" placeholder="Optional Location"></textarea>
+          <select class="styled-select slate semi-square" id="emoji" name="emoji">
+            <option value="0">None</option>
+            <option value="1">:)</option>
+            <option value="2">:(</option>
+            <option value="3">Heart</option>
+            <option value="4">Poop</option>
+            <option value="5">Excited</option>
+          </select>
+
+
+
         <textarea id="comment" name="comment" cols="40" placeholder="This is your story."></textarea>
+
+      </div>
 
         <button id="sendbuttn" class="button" type="submit" value="Send"><span>Send</span></button>
     </form>
@@ -75,10 +101,8 @@
         // Bind to the submit event of our form
         $("#foo").submit(function(event){
 
-          if(document.getElementById("location").value == '')
-          {
-            document.getElementById("location").value = 'undefined';
-          }
+          var e = document.getElementById("location");
+          var locationToSend = e.options[e.selectedIndex].value;
 
           if(document.getElementById("name").value == '')
           {
@@ -244,7 +268,7 @@
             div.style.maxWidth = "800px";
             div.style.minHeight = "15px";
             div.style.height = (words[current].length* .25).toString()+ "px";
-            div.style.background = "#A6D0B7";
+            div.style.background = "#c9d1e5";
             div.style.borderRadius = "6px";
             div.style.color = "#323641";
             div.style.padding = "15px";

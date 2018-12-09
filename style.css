@@ -82,7 +82,7 @@
 
 }
 
-#location{
+/*#location{
 	width:30%;
 	height:15px;
 	border-radius: 6px;
@@ -92,7 +92,7 @@
 	margin-bottom:10px;
 	position:relative;
 
-}
+}*/
 
 #sendbuttn{
 	margin-left:20px;
@@ -121,7 +121,7 @@ input{
 	float:right;
     background-color: #F7EDC6; /* Green */
     border: none;
-    color: #F7EDC6;
+    color: #f7f4f4;
     padding: 5px 15px;
     text-align: center;
     text-decoration: none;
@@ -142,3 +142,49 @@ input{
     background-color: #008CBA;
     color: white;
 }
+
+/*-------------------*/
+.styled-select {
+/*   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+*/   	
+	margin-bottom: 10px;
+	margin-top: 10px;
+	height: 29px;
+   overflow: hidden;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+/*   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+*/   height: 34px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+
+.semi-square {
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+/* -------------------- Colors: Background */
+.slate   { background-color: #ddd; }
+
+/* -------------------- Colors: Text */
+.slate select   { color: #000; }
+
+
+
