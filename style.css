@@ -70,6 +70,17 @@
 	z-index:10000;
 
 }
+#name{
+	width:30%;
+	height:15px;
+	border-radius: 6px;
+	border:none;
+	font-size: 13px;
+	padding:8px;
+	margin-bottom:10px;
+	position:relative;
+
+}
 
 #location{
 	width:30%;
