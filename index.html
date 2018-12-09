@@ -212,12 +212,12 @@
 
           }
           else if(iter<=2) {
-            else if(iter ==2 && index !=0  && index!=1  && index!=2 && index!=3){
+            if(iter ==2 && index !=0  && index!=1  && index!=2 && index!=3){
               thenames.push(data[index]);
                         console.log(data[index]);
 
             }
-            if(iter ==1 && index!=1 && index!=2  && index!=0 && index!=3){
+            else if(iter ==1 && index!=1 && index!=2  && index!=0 && index!=3){
               places.push(data[index]);
                         console.log(data[index]);
 
