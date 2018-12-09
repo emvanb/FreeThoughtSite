@@ -229,12 +229,13 @@
         var words = [];
         var places = [];
         var thenames = [];
+        var emojis = [];
 
         // console.log(data);
         iter = 0;
         for(index=0; index<thJ.data.length; index++){
           //if iter is 3
-          if(iter>2 && index!=2 && index!=0 && index!=1 && index!=3){
+          if(iter>3 && index!=2 && index!=0 && index!=1 && index!=3 && index!=4){
             times.push(data[index]);
             console.log(data[index]);
 
@@ -242,24 +243,28 @@
 
 
           }
-          else if(iter<=2) {
-            if(iter ==2 && index !=0  && index!=1  && index!=2 && index!=3){
+          else if(iter<=3) {
+            if(iter ==2 && index !=0  && index!=1  && index!=2 && index!=3 && index!=4){
               thenames.push(data[index]);
                         console.log(data[index]);
 
             }
-            else if(iter ==1 && index!=1 && index!=2  && index!=0 && index!=3){
+            else if(iter ==1 && index!=1 && index!=2  && index!=0 && index!=3 && index!=4){
               places.push(data[index]);
                         console.log(data[index]);
 
 
             } 
-            else if(iter ==0 && index !=0  && index!=1  && index!=2 && index!=3){
+            else if(iter ==0 && index !=0  && index!=1  && index!=2 && index!=3 && index!=4){
               words.push(data[index]);
                         console.log(data[index]);
 
             } 
+            else if(iter ==3 && index !=0  && index!=1  && index!=2 && index!=3 && index!=4){
+              emojis.push(data[index]);
+                        console.log(data[index]);
 
+            } 
             
             iter++;
 
@@ -271,6 +276,7 @@
         console.log(places);
         console.log(times);
         console.log(thenames);
+        console.log(emojis);
 
 
         for(comments=0; comments<words.length;comments++){
