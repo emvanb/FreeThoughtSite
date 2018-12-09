@@ -85,6 +85,10 @@
             document.getElementById("location").value = 'undefined';
           }
 
+          if(document.getElementById("name").value == '')
+          {
+            document.getElementById("name").value = 'no name';
+          }
             // Prevent default posting of form - put here to work in case of errors
             event.preventDefault();
 
@@ -158,21 +162,11 @@
         
 
     }
-    document.getElementById("sendbuttn").onclick = function() {
-         $("#location").placeholder = "";
-          $("#comment").placeholder = "";
-          $("#name").placeholder = "";
-
-        var hidden = document.getElementById("hiddenDiv");
-        hidden.style.display = "block";
-        // stateChange();
-        
-
-    }
 
     function stateChange() {
         setTimeout(function () {
         location.reload();
+        name.reload();
 
       }, 300);
     }
