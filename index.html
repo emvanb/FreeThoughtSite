@@ -121,6 +121,10 @@
           {
             document.getElementById("name").value = 'no name';
           }
+          if(document.getElementById("comment").value == '')
+          {
+            document.getElementById("comment").value = '-1';
+          }
             // Prevent default posting of form - put here to work in case of errors
             event.preventDefault();
 
