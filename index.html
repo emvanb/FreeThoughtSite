@@ -202,11 +202,11 @@
         // console.log(data);
         iter = 0;
         for(index=0; index<thJ.data.length; index++){
-
-          console.log(data[index]);
           //if iter is 3
           if(iter>2 && index!=2 && index!=0 && index!=1 && index!=3){
             times.push(data[index]);
+            console.log(data[index]);
+
             iter =0;
 
 
@@ -214,13 +214,19 @@
           else if(iter<=2) {
             else if(iter ==2 && index !=0  && index!=1  && index!=2 && index!=3){
               names.push(data[index]);
+                        console.log(data[index]);
+
             }
             if(iter ==1 && index!=1 && index!=2  && index!=0 && index!=3){
               places.push(data[index]);
+                        console.log(data[index]);
+
 
             } 
             else if(iter ==0 && index !=0  && index!=1  && index!=2 && index!=3){
               words.push(data[index]);
+                        console.log(data[index]);
+
             } 
 
             
